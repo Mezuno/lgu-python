@@ -21,7 +21,7 @@ def getPrice():
         result.config(text='Заполните все поля..')
 
 app.title('Calculate app')
-app.geometry('400x300')
+app.geometry('400x300+700+350')
 app.resizable(width=False, height=False)
 
 canvas = Canvas(app, height=300, width=400)
