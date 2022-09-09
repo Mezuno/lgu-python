@@ -1,10 +1,10 @@
 from tkinter import *
-from tkinter import ttk
 
 root = Tk()
 root.title('03.09.22 LessonTwo ExerciseOne')
-root.geometry('1000x600+600+350')
-root.resizable(width=True, height=True)
+root.geometry('750x300+600+350')
+
+root.columnconfigure(1, minsize=150)
 
 tasksCount = 6
 
@@ -33,7 +33,8 @@ def get_result():
     else:
         category = 4
 
-    result.set(f'Ваша категория: {category}, Сумма баллов: {taskRatesSum}')
+    result.set(f'''Ваша категория: {category}
+    Сумма баллов: {taskRatesSum}''')
 
 
 Label(text="Фамилия: ").grid(row=1, column=1)
@@ -53,7 +54,7 @@ schoolNumberInput = Entry()
 schoolNumberInput.grid(row=4, column=2)
 
 for i in range(tasksCount):
-    Label(text='Кол-во баллов за ' + str(i+1) + ' задачу').grid(row=i+1, column=3, padx=30)
+    Label(text='''Кол-во баллов за ''' + str(i+1) + ''' задачу''').grid(row=i+1, column=3, padx=30)
 
 taskOneRateVar = IntVar()
 taskTwoRateVar = IntVar()
@@ -73,13 +74,13 @@ taskRateVars = [
 
 for i in range(tasksCount):
     for j in range(4):
-        Radiobutton(root, variable=taskRateVars[i], value=j, text=str(j)).grid(row=i+1, column=j+4)
+        Radiobutton(root, variable=taskRateVars[i], value=j, text=str(j)).grid(row=i+1, column=j+4, pady=10)
 
-result = StringVar()
-
-Label(textvariable=result).grid(row=15, column=1)
 
 button = Button(text="Отправить", command=get_result)
-button.grid(row=20, column=1, pady=30)
+button.grid(row=5, column=1, sticky='wesn',  columnspan=2)
+
+result = StringVar()
+Label(textvariable=result, justify=LEFT).grid(row=6, column=1, columnspan=2, rowspan=2)
 
 root.mainloop()
