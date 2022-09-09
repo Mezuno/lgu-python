@@ -1,0 +1,3 @@
+Lada 300000
+Volkswagen 400000
+Ford 150000
