@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 
 root = Tk()
-root.title('03.09.22 LessonTwo ExerciseOne')
+root.title('03.09.22 Lesson2 ExerciseOne')
 root.geometry('1000x600+600+350')
 root.resizable(width=True, height=True)
 

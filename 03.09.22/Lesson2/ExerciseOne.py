@@ -1,7 +1,7 @@
 from tkinter import *
 
 root = Tk()
-root.title('03.09.22 LessonTwo ExerciseOne')
+root.title('03.09.22 Lesson2 ExerciseOne')
 root.geometry('750x300+600+350')
 
 root.columnconfigure(1, minsize=150)
